@@ -5,7 +5,14 @@ import { getFirestore, collection, doc, onSnapshot, addDoc, updateDoc } from 'fi
 
 // Initialize Firebase
 const appId = typeof __app_id !== 'undefined' ? __app_id : 'inventory-app-default';
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {};
+const firebaseConfig = {
+  apiKey: "AIzaSyASjLHWBd0Qn2451tX85c-uYmXXyKz-6hw",
+  authDomain: "smart-inventory-sabil.firebaseapp.com",
+  projectId: "smart-inventory-sabil",
+  storageBucket: "smart-inventory-sabil.firebasestorage.app",
+  messagingSenderId: "872402801301",
+  appId: "1:872402801301:web:da493acb9b45ce880d419c"
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
