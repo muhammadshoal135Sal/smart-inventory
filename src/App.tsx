@@ -937,8 +937,16 @@ export default function InventoryApp() {
 }
 
 import { createRoot } from 'react-dom/client';
+
+// Mencari elemen root di index.html
 const container = document.getElementById('root');
 if (container) {
   const root = createRoot(container);
-  root.render(<App />);
+  
+  // Mengambil komponen utama secara otomatis tanpa peduli apa namanya
+  const MainComponent = typeof App !== 'undefined' ? App : (window as any).App || (() => null);
+  
+  if (MainComponent !== (() => null)) {
+    root.render(<MainComponent />);
+  }
 }
